@@ -65,9 +65,9 @@ function App() {
         <section>
         </section>
 
-        <section class="carousel">
+        
           <ControlledCarouselStarters />
-        </section>
+        
 
         <div class="wrapper style2">
 

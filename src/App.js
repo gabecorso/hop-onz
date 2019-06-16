@@ -1,15 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { Jumbotron, Container, Row, Col, Alert, Button, Card, Image } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 import './assets/css/main.css';
+import Nav from './components/Nav';
 import ControlledCarousel from './components/ControlledCarousel.js'
-
 import ControlledCarouselStarters from './components/ControlledCarouselStarters.js'
 
 function App() {
   return (
+    <React.Fragment>
     <div className="App">
     <body id="home" class="homepage">
       <div id="page-wrapper">
@@ -24,18 +26,7 @@ function App() {
                 <a href="#banner" class="button circled scrolly">See More</a>
               </footer>
             </div>
-
-            <nav id="nav">
-              <ul >
-                <li><a href="#header">Home</a></li>
-              
-                <li><a href="#about">About</a></li>
-
-                <li><a href="bingo.html">Bingo</a></li>
-
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </nav>
+           <Nav />
           </div>
 
           <section id="banner">
@@ -57,14 +48,17 @@ function App() {
                 <p style={{textColor: "#662D91"}}>
                   Hop-Onz stickers were created to bring fun and charity together. Every time you buy a Hop-Onz you are part of something greater, the ability to give back. Collecting will be endless as our portfolio of characters and categories grow with ongoing bingo opportunities. Hop-Onz can be applied to any surface as long as they are clean and dry.</p>
                   <p> 
-                    Your friends and neighbors will see your philanthropic interest as you drive, bike, skateboard, walk, sit, or place them on your mailbox. In supporting the Hop-Onz mission to combine fun and charity, future name cards will have an educational spin and foster kids getting outside. Even adults are joining in on the fun and our growing portfolio of Hop-Onz stickers is numberless.
+                    Your friends and neighbors will see your philanthropic interest as you drive, bike, skateboard, walk, sit, or place them on your mailbox. 
+                    In supporting the Hop-Onz mission to combine fun and charity, 
+                    fact cards will have an educational spin and foster kids getting outside. 
+                    Even adults are joining in on the fun and our growing portfolio of Hop-Onz stickers is numberless.
                   </p>
                   <p>
                   We worked hard to come up with an adhesive that will stay stuck to your belongings in all weather conditions. We are proud to offer Hop-Onz using non toxic rubber materials with an adhesive that you can count on staying stuck until you move it yourself!
                 </p>
             <hr/>
 
-            <p style={{fontSize: "32px"}} >6 new Hop-Onz categories of 12 will available at a retailer near you soon!</p>
+            <p style={{fontSize: "32px"}} >6 new Hop-Onz categories of 12 will be available at a retailer near you soon!</p>
           </header>
         </section>
 
@@ -128,6 +122,7 @@ function App() {
         </div>
       </body>
     </div>
+    </React.Fragment>
 
   );
 }

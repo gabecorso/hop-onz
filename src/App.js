@@ -35,11 +35,8 @@ function App() {
             </header>
           </section>
 
-          <section class="carousel">
-            <div class="reel">
             <ControlledCarousel />
-            </div>
-          </section>
+            
 
             <section id="banner">
               <header id="about" class="container special">

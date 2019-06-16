@@ -3,6 +3,7 @@ import { Carousel, Row, Container, Button, Modal, Alert } from 'react-bootstrap'
 import Nav from './Nav';
 import SignUp from './SignUp';
 
+
 class Bingo extends React.Component {
 
 

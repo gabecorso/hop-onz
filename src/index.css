@@ -106,7 +106,10 @@ button.outline {
   color: #555;
 }
 
-
+.bingo-portal {
+	background-color: #D8C4E0;
+	
+}
 .email-alert-success {
 	background-color: #D8C4E0;
 }

@@ -1,5 +1,5 @@
 import '../index.css';
-import { MoreResources, DisplayFormikState } from '../helper';
+import { DisplayFormikState } from '../helper';
 
 import React from 'react';
 import { render } from 'react-dom';

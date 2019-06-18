@@ -12,8 +12,10 @@ import ControlledCarouselStarters from './components/ControlledCarouselStarters.
 function App() {
   return (
     <React.Fragment>
+    
     <div className="App">
     <body id="home" class="homepage">
+    <div className='font-container'>
       <div id="page-wrapper">
         <div id="header">
             <div  class="inner">
@@ -23,7 +25,7 @@ function App() {
                 <p class="splash-text-2"><strong style={{color: "white"}}>Little Stickers with a Big Mission</strong></p>
               </header>
               <footer>
-                <a href="#banner" class="button circled scrolly">See More</a>
+                <a href="#banner" class="button circled">More</a>
               </footer>
             </div>
            <Nav />
@@ -36,7 +38,7 @@ function App() {
           </section>
 
             <ControlledCarousel />
-            
+    
 
             <section id="banner">
               <header id="about" class="container special">
@@ -117,8 +119,10 @@ function App() {
             </div>
           </div>
         </div>
+        </div>
       </body>
     </div>
+    
     </React.Fragment>
 
   );

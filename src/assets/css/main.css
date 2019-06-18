@@ -1,6 +1,11 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("font-awesome.min.css");
 
+@font-face {
+  font-family: 'HopOnz';
+  src: local('HopOnz'), url(../fonts/moon_get-Heavy.ttf) format('truetype');
+}
+
 /*
 	Helios by HTML5 UP
 	html5up.net | @n33co
@@ -1559,6 +1564,11 @@
 		font-weight: 300;
 	}
 
+	.font-container {
+
+  font-family: 'HopOnz';
+}
+	
 		body.is-loading *, body.is-loading *:after, body.is-loading *:before {
 			-moz-transition: none !important;
 			-webkit-transition: none !important;

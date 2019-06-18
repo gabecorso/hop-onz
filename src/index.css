@@ -143,6 +143,16 @@ button.outline {
 	
  
 }
+
+.bingo-img {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.bingo-img-thumb {
+  
+}
+
 .lndscp {
 	-webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);

@@ -12,7 +12,7 @@ const BingoCode = (props) => (
 	      initialValues={{ code: '' }}
 	      onSubmit={(values, { setSubmitting }) => {
 	        setTimeout(() => {
-	        props.alertCode(values);
+	        props.alertCode(values, props.idx);
 	          setSubmitting(false);
 	        }, 500);
 	      }}

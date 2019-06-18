@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Row, Container, Accordion, Form, FormControl, InputGroup, Button, Image, Modal, Alert, Card, Col, Jumbotron } from 'react-bootstrap';
+import { Carousel, Row, Container, Accordion, Form, Badge, FormControl, InputGroup, Button, Image, Modal, Alert, Card, Col, Jumbotron } from 'react-bootstrap';
 import Nav from './Nav';
 import Nav2 from './Nav2';
 import SignUp from './SignUp';
@@ -23,7 +23,9 @@ class Bingo extends React.Component {
       email: null,
       bingo_card: null,
       alert_code: null,
-      code: null
+      code: null,
+      code_count: [false,false,false,false,
+      false,false,false,false,false,false,false,false]
 ,    };
   }
 
@@ -42,10 +44,28 @@ class Bingo extends React.Component {
     this.setState({email: values.email});
   }
 
-  alertCode(values) {
+  alertCode(values, key) {
+    var codeCount = this.state.code_count ? this.state.code_count : [];
     this.setState({alert_code: values.code});
     this.setState({code: values.code});
+    this.setState({key_code: key});
+    if (codeCount.length) {
+      codeCount[key] = true;
+      this.setState({code_count: codeCount});
+      }
     
+  }
+
+  calculateCode() {
+    var codes = this.state.code_count ? this.state.code_count : []
+    var count = 0
+    for (var idx in codes) {
+      if (codes[idx] === true) {
+        count += 1;
+      }
+    }
+    return count;
+
   }
 
   handleCode(values) {
@@ -72,6 +92,11 @@ class Bingo extends React.Component {
     const handleBingoCard = () => this.setState({ bingo_card: true });
 
     const handleBingoCardClose = () => this.setState({bingo_card: null});
+
+    var key_code = this.state.key_code ? this.state.key_code : '';
+    var code_count = this.state.code_count ? this.state.code_count : [];
+
+    console.log(this.calculateCode());
 
     return (
 
@@ -129,7 +154,7 @@ class Bingo extends React.Component {
                 
                 <Col md={3}>
                 <Card onClick={handleBingoCard}>
-                  <Card.Img bsPrefix="a" style={{height: "350px"}} variant="top" src="https://hoponz.s3-us-west-2.amazonaws.com/newCard1.png" />
+                  <Card.Img bsPrefix="a" className={this.calculateCode() == 12 ? '' : 'bingo-img'} style={{height: "350px"}} variant="top" src="https://hoponz.s3-us-west-2.amazonaws.com/newCard1.png" />
                   <Card.Body>
                     <Card.Title>Team Sports</Card.Title>
                     <Card.Text>
@@ -137,7 +162,7 @@ class Bingo extends React.Component {
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                    <small className="text-muted">0 of 12 Team Sports Hop-Onz Collected</small>
+                    <small className="text-muted">{this.calculateCode()} of 12 Team Sports Hop-Onz Collected</small>
                   </Card.Footer>
                 </Card>
                 </Col>
@@ -153,7 +178,53 @@ class Bingo extends React.Component {
                 <Row>
                 <Col md={5}>
                 <Card >
-                  <Card.Img bsPrefix="a" style={{height: "350px"}} variant="top" src="https://hoponz.s3-us-west-2.amazonaws.com/newCard1.png" />
+                <Col>
+                  <Row>
+                    <Col md={4}>
+                    <Image className={code_count.length && code_count[0]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/LacrossThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[1]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/soccerThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[2]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/volleyThumb.png" rounded />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={4}>
+                    <Image className={code_count.length && code_count[3]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/hockeyThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[4]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/basketThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[5]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/fHockeyThumb.png" rounded />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={4}>
+                    <Image className={code_count.length && code_count[6]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/fballThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[7]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/wpoloThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[8]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/baseballThumb.png" rounded />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={4}>
+                    <Image className={code_count.length && code_count[9]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/cricketThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[10]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/rowingThumb.png" rounded />
+                    </Col>
+                    <Col  md={4}>
+                    <Image className={code_count.length && code_count[11]==true ? '' : 'bingo-img'} fluid src="https://hoponz.s3-us-west-2.amazonaws.com/bingoThumbs/rugbyThumb.png" rounded />
+                    </Col>
+                  </Row>
+                </Col>
+                  
                   <Card.Body>
                     <Card.Title>Team Sports</Card.Title>
                     <Card.Text>
@@ -161,7 +232,7 @@ class Bingo extends React.Component {
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                    <small className="text-muted">0 of 12 Team Sports Hop-Onz Collected</small>
+                    <small className="text-muted">{this.calculateCode()} of 12 Team Sports Hop-Onz Collected</small>
                   </Card.Footer>
                 </Card>
                 </Col>
@@ -169,11 +240,14 @@ class Bingo extends React.Component {
                 <Accordion defaultActiveKey="0">
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="0">
-                      Team Sports Lacrosse
+                      Team Sports Lacrosse 
+                      {code_count.length && code_count[0]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
                       <Card.Body>
-                      {this.state.alert_code ?
+                      {this.state.alert_code && key_code==0 ?
                         <Alert variant="success" onClose={handleDismissCode} dismissible>
                           <Alert.Heading>
                               Thanks for submitting your code!
@@ -182,7 +256,7 @@ class Bingo extends React.Component {
                 :
                 ''
                 }
-                      <BingoCode alertCode={this.alertCode}/>
+                      <BingoCode alertCode={this.alertCode} idx={0}/>
 
                       </Card.Body>
                     </Accordion.Collapse>
@@ -190,89 +264,255 @@ class Bingo extends React.Component {
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="1">
                       Team Sports Soccer
+                      {code_count.length && code_count[1]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="1">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==1 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+
+
+                      <BingoCode alertCode={this.alertCode} idx={1}/>
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="2">
                       Team Sports Volleyball
+                      {code_count.length && code_count[2]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="2">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==2 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={2}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="3">
                       Team Sports Hockey
+                      {code_count.length && code_count[3]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="3">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==3 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={3}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="4">
                       Team Sports Basketball
+                      {code_count.length && code_count[4]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="4">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==4 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={4}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="5">
                       Team Sports Field Hockey
+                      {code_count.length && code_count[5]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="5">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==5 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={5}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="6">
                       Team Sports Football
+                      {code_count.length && code_count[6]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="6">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==6 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={6}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="7">
                       Team Sports Waterpolo
+                      {code_count.length && code_count[7]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="7">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==7 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={7}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="8">
                       Team Sports Baseball
+                      {code_count.length && code_count[8]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="8">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==8 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={8}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="9">
                       Team Sports Cricket
+                      {code_count.length && code_count[9]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="9">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==9 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={9}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="10">
                       Team Sports Rowing
+                      {code_count.length && code_count[10]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="10">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==10 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={10}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="11">
                       Team Sports Rugby
+                      {code_count.length && code_count[11]===true ? 
+                        <Badge pill style={{float: 'right', marginTop: '5px'}}variant="success">&#10003;</Badge> 
+                        : ''}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="11">
-                      <Card.Body><BingoCode /></Card.Body>
+                      <Card.Body>
+                      {this.state.alert_code && key_code==11 ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode} idx={11}/>
+
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                 </Accordion>

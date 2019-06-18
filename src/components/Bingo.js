@@ -1,8 +1,9 @@
 import React from 'react';
-import { Carousel, Row, Container, Button, Image, Modal, Alert, Card, Col, Jumbotron } from 'react-bootstrap';
+import { Carousel, Row, Container, Accordion, Form, FormControl, InputGroup, Button, Image, Modal, Alert, Card, Col, Jumbotron } from 'react-bootstrap';
 import Nav from './Nav';
 import Nav2 from './Nav2';
 import SignUp from './SignUp';
+import BingoCode from './BingoCode';
 
 
 class Bingo extends React.Component {
@@ -14,18 +15,23 @@ class Bingo extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.alertSubmit = this.alertSubmit.bind(this);
+    this.alertCode = this.alertCode.bind(this);
 
     this.state = {
       show: false,
       alert_email: null,
-      email: null
-    };
+      email: null,
+      bingo_card: null,
+      alert_code: null,
+      code: null
+,    };
   }
 
   handleClose() {
     this.setState({ show: false });
   }
 
+ 
   handleShow() {
     this.setState({ show: true });
 
@@ -35,10 +41,38 @@ class Bingo extends React.Component {
     this.setState({alert_email: values.email});
     this.setState({email: values.email});
   }
+
+  alertCode(values) {
+    this.setState({alert_code: values.code});
+    this.setState({code: values.code});
+    
+  }
+
+  handleCode(values) {
+
+  }
+
+  handleSubmit(e) {
+    const form = e.currentTarget;
+    
+      e.preventDefault();
+      e.stopPropagation();
+    
+
+  console.log(form);
+  console.log('made it');
+  }
  
   render() {
 
     const handleDismiss = () => this.setState({ alert_email: null });
+
+    const handleDismissCode = () => this.setState({ alert_code: null });
+
+    const handleBingoCard = () => this.setState({ bingo_card: true });
+
+    const handleBingoCardClose = () => this.setState({bingo_card: null});
+
     return (
 
 
@@ -94,7 +128,7 @@ class Bingo extends React.Component {
                 </Col>
                 
                 <Col md={3}>
-                <Card>
+                <Card onClick={handleBingoCard}>
                   <Card.Img bsPrefix="a" style={{height: "350px"}} variant="top" src="https://hoponz.s3-us-west-2.amazonaws.com/newCard1.png" />
                   <Card.Body>
                     <Card.Title>Team Sports</Card.Title>
@@ -110,6 +144,147 @@ class Bingo extends React.Component {
 
                 <Col md={1}>
               </Col>
+
+              <Modal size="lg" show={this.state.bingo_card} onHide={handleBingoCardClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Hop-Onz Interactive Bingo: Team Sports</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <Row>
+                <Col md={5}>
+                <Card >
+                  <Card.Img bsPrefix="a" style={{height: "350px"}} variant="top" src="https://hoponz.s3-us-west-2.amazonaws.com/newCard1.png" />
+                  <Card.Body>
+                    <Card.Title>Team Sports</Card.Title>
+                    <Card.Text>
+                      Click on a Hop-Onz to view the fact card and upload your own code!
+                    </Card.Text>
+                  </Card.Body>
+                  <Card.Footer>
+                    <small className="text-muted">0 of 12 Team Sports Hop-Onz Collected</small>
+                  </Card.Footer>
+                </Card>
+                </Col>
+                <Col >
+                <Accordion defaultActiveKey="0">
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                      Team Sports Lacrosse
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                      <Card.Body>
+                      {this.state.alert_code ?
+                        <Alert variant="success" onClose={handleDismissCode} dismissible>
+                          <Alert.Heading>
+                              Thanks for submitting your code!
+                           </Alert.Heading>
+                          </Alert>  
+                :
+                ''
+                }
+                      <BingoCode alertCode={this.alertCode}/>
+
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="1">
+                      Team Sports Soccer
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="2">
+                      Team Sports Volleyball
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="2">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="3">
+                      Team Sports Hockey
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="3">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="4">
+                      Team Sports Basketball
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="4">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="5">
+                      Team Sports Field Hockey
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="5">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="6">
+                      Team Sports Football
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="6">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="7">
+                      Team Sports Waterpolo
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="7">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="8">
+                      Team Sports Baseball
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="8">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="9">
+                      Team Sports Cricket
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="9">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="10">
+                      Team Sports Rowing
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="10">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="11">
+                      Team Sports Rugby
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="11">
+                      <Card.Body><BingoCode /></Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                </Accordion>
+                </Col>
+                </Row>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleBingoCardClose}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+                </Modal>
               </Row>
               <br/>
               <br/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Row } from 'react-bootstrap';
+import { Carousel, Row, Col, Image } from 'react-bootstrap';
 
 class ControlledCarousel extends React.Component {
   constructor(props, context) {
@@ -48,9 +48,35 @@ class ControlledCarousel extends React.Component {
         </Carousel.Item>
         <Carousel.Item>
         <Row>
+        <div 
+            style={{marginLeft: "40px"}}>
+          <Image
+            height="450px"
+            width="300px"
+            src="https://s3-us-west-2.amazonaws.com/hoponz/cleanPhone1.png"
+            alt="First slide"
+          />
+          </div>
+                    
+          <Image
+          
+            className='image featured'
+            src="https://s3-us-west-2.amazonaws.com/hoponz/mailbox.jpg"
+            alt="First slide"
+          />
+          
+         
+          
+          </Row>
+          <Carousel.Caption>
+            
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+        <Row>
           <img
             className="image featured"
-            src="https://s3-us-west-2.amazonaws.com/hoponz/hopHelmetHero1.JPG"
+            src="https://s3-us-west-2.amazonaws.com/hoponz/cleanDell1.png"
             alt="First slide"
           />
           <img

@@ -2752,6 +2752,14 @@
 			box-shadow: 10px 10px 5px;
 
 			}
+			.image.featured.lndscp {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+
+}
 
 			.image.left {
 				margin: 0 1em 1em 0;

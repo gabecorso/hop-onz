@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-
 import { Jumbotron, Container, Row, Col, Alert, Button, Card, Image } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
@@ -25,7 +24,7 @@ function App() {
                 <p class="splash-text-2"><strong style={{color: "white"}}>Little Stickers with a Big Mission</strong></p>
               </header>
               <footer>
-                <a href="#banner" class="button circled">More</a>
+                <a href="#banner" style={{fontSize: '3em'}}>&#8964;</a>
               </footer>
             </div>
            <Nav />
@@ -39,7 +38,6 @@ function App() {
 
             <ControlledCarousel />
     
-
             <section id="banner">
               <header id="about" class="container special">
                 <h2>Who we are and what we stand for</h2>

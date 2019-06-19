@@ -37,8 +37,7 @@ class ControlledCarousel extends React.Component {
             <Card.Body>
               <Card.Title className={'starter-card-text'}>Team Sports Starter: Hockey</Card.Title>
               <Card.Text>
-                The first puck used during outdoor 
-                hockey in the 1800's was made out of frozen cow dung.
+                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/hckyFactThumb.png" style={{marginTop: '40px'}} width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
             
@@ -51,7 +50,7 @@ class ControlledCarousel extends React.Component {
             <br/>
               <Card.Title className={'starter-card-text'}>United States of America Starter: The American Flag</Card.Title>
               <Card.Text>
-                The current U.S. Flag was redesigned in 1958 by a 17-year-old high school student, Robert G. Heft
+                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/usaFlgFactThumb.png" width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
             
@@ -61,7 +60,7 @@ class ControlledCarousel extends React.Component {
             <Card.Body>
               <Card.Title className={'starter-card-text'}>12 Natural Wonders of the World Starter: Milky Way</Card.Title>
               <Card.Text>
-                The Milky Way has over 2 Billion Stars
+                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/mwayFactThumb.png" width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
             
@@ -82,7 +81,7 @@ class ControlledCarousel extends React.Component {
             <Card.Body>
               <Card.Title className={'starter-card-text'}>Endangered Species Starter: Asian Elephant</Card.Title>
               <Card.Text>
-                The Asian Elephant has a smaller body and smaller, more rounded ears than its African cousin
+              <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/textFactThumb.png" width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
             
@@ -93,7 +92,7 @@ class ControlledCarousel extends React.Component {
            
               <Card.Title className={'starter-card-text'}>Carnivorous Dinosaurs Starter: Giganotosaurus</Card.Title>
               <Card.Text>
-                Giganotosaurus is the largest carnivorous dinosaur and runs at a speed of 31 mph
+                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/gigFactThumb.png" width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
             
@@ -103,7 +102,7 @@ class ControlledCarousel extends React.Component {
             <Card.Body>
               <Card.Title className={'starter-card-text'}>Ocean Life Starter: Manatee</Card.Title>
               <Card.Text>
-                Manatee's are also called Sea Cows. They are herbivores.
+                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/mteeFactThumb.png" style={{marginTop: '30px'}} width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
            

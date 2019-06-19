@@ -32,7 +32,7 @@ function App() {
 
           <section id="banner">
             <header class="container special">
-              <h2 style={{textColor: "#662D91"}}><strong>Hop-Onz</strong> </h2>
+              <h2 style={{textColor: "#662D91"}}><strong><Image fluid style={{height: "", width: "400px"}} src="https://hoponz.s3-us-west-2.amazonaws.com/logoTestTIny.png"></Image></strong> </h2>
             </header>
           </section>
 

@@ -158,7 +158,7 @@ class Bingo extends React.Component {
                   <Card.Body>
                     <Card.Title>Team Sports</Card.Title>
                     <Card.Text>
-                      Click on a Hop-Onz to view the fact card and upload your own code!
+                      Click on a Hop-Onz to upload the number on the back of your fact card!
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
@@ -228,7 +228,7 @@ class Bingo extends React.Component {
                   <Card.Body>
                     <Card.Title>Team Sports</Card.Title>
                     <Card.Text>
-                      Click on a Hop-Onz to view the fact card and upload your own code!
+                      Click on a Hop-Onz in the list to the right to upload the number on the back of your fact card!
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>

@@ -82,7 +82,9 @@ function App() {
               </p>
               <p style={{align: "center"}}>
               In supporting the Hop-Onz mission to combine fun, education and philanthropy each sticker will contain an educational fact card. This collectible card is found behind the Hop-Onz sticker and has a number on the back. Upload that number on our website to play bingo with multiple cards simultaneously or duplicate categories.</p>
-              <Image fluid style={{height: "", width: "800px"}} src="https://hoponz.s3-us-west-2.amazonaws.com/bingoExp.png"></Image>
+
+               <Image fluid style={{height: "", width: "800px"}} src="https://hoponz.s3-us-west-2.amazonaws.com/onlineIntBingo.png"></Image>
+                <Image fluid style={{height: "", width: "800px"}} src="https://hoponz.s3-us-west-2.amazonaws.com/bingoExp.png"></Image>
               
               <p style={{align: "center"}}>The more you play the more you win and the closer you get to directing 4% of Hop-Onz net profits to a 501(c) (3) of your choice. Hop-Onz will donate 8% of their net profits annually, directed by Bingo winners.
             </p>

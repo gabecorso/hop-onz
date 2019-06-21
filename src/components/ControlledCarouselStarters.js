@@ -43,7 +43,7 @@ class ControlledCarousel extends React.Component {
             
           </Card>
           <Card>
-            <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/worldFlagStarter.png"  />
+            <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/worldFlagStarter.png"  style={{padding: '10px'}}/>
             <Card.Body>
             <br/>
             <br/>
@@ -56,11 +56,11 @@ class ControlledCarousel extends React.Component {
             
           </Card>
           <Card>
-            <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/galaxy.png" width="200px" height="400px"/>
+            <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/galaxy.png" style={{paddingTop: '5px'}} width="200px" height="400px"/>
             <Card.Body>
               <Card.Title className={'starter-card-text'}>12 Natural Wonders of the World Starter: Milky Way</Card.Title>
               <Card.Text>
-                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/mwayFactThumb.png" width="200px" height="400px" />
+                <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/mwayNewFactThumb.png" width="200px" height="400px" />
               </Card.Text>
             </Card.Body>
             
@@ -79,7 +79,7 @@ class ControlledCarousel extends React.Component {
           <Card>
             <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/endageredAnimalsStarter.png" width="200px" height="400px" />
             <Card.Body>
-              <Card.Title className={'starter-card-text'}>Endangered Species Starter: Asian Elephant</Card.Title>
+              <Card.Title className={'starter-card-text'}>Animals Near Extinction Starter: Asian Elephant</Card.Title>
               <Card.Text>
               <Card.Img src="https://hoponz.s3-us-west-2.amazonaws.com/factThumbs/textFactThumb.png" width="200px" height="400px" />
               </Card.Text>

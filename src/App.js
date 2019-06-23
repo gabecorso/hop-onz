@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import './assets/css/main.css';
 import Nav from './components/Nav';
+import NavMobile from './components/NavMobile';
 import ControlledCarousel from './components/ControlledCarousel.js'
 import ControlledCarouselStarters from './components/ControlledCarouselStarters.js'
 
@@ -17,8 +18,14 @@ function App() {
     <div className='font-container'>
       <div id="page-wrapper">
         <div id="header">
+
             <div  class="inner">
+            <div className={"mobile-nav"}>
+              <NavMobile />
+            </div>
+
               <header>  
+
                 <h1 class="splash-text"><a style={{color: "white"}} id="logo">Hop-Onz</a></h1>
                 <hr class='top-hr'/>
                 <p class="splash-text-2"><strong style={{color: "white"}}>Little Stickers with a Big Mission</strong></p>
@@ -27,8 +34,11 @@ function App() {
                 <a href="#banner" style={{fontSize: '3em'}}>&#8964;</a>
               </footer>
             </div>
-           <Nav />
+            <Nav /> 
+
+
           </div>
+
 
           <section id="banner">
             <header class="container special">

@@ -63,6 +63,10 @@
 
 /* Containers */
 
+	.mobile-nav {
+		display: none;
+	}
+
 	.container {
 		margin-left: auto;
 		margin-right: auto;
@@ -2713,6 +2717,7 @@
 					padding-left: 2em;
 					padding-bottom: 4.5em;
 					padding-right: 2em;
+					font-size: 2em;
 
 				}
 				#header .inner .splash-text-2 {
@@ -3061,6 +3066,17 @@
 
 			#nav {
 				display: none;
+			}
+
+			.mobile-nav {
+				
+				position: absolute;
+  top: -95px;
+  left: -15px;
+  font-size: 18px;
+				
+				display: block;
+				
 			}
 
 		/* Banner */

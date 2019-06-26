@@ -87,7 +87,7 @@ class ControlledCarousel extends React.Component {
             
           </Card>
           <Card>
-            <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/dinoStarter.png" width="200px" height="400px" />
+            <Card.Img variant="top" src="https://s3-us-west-2.amazonaws.com/hoponz/newGigThumb.png" width="200px" height="400px" />
             <Card.Body>
            
               <Card.Title className={'starter-card-text'}>Carnivorous Dinosaurs Starter: Giganotosaurus</Card.Title>

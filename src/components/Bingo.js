@@ -2,6 +2,7 @@ import React from 'react';
 import { Carousel, Row, Container, Accordion, Form, Badge, FormControl, InputGroup, Button, Image, Modal, Alert, Card, Col, Jumbotron } from 'react-bootstrap';
 import Nav from './Nav';
 import Nav2 from './Nav2';
+import '../App.css';
 import SignUp from './SignUp';
 import BingoCode from './BingoCode';
 
@@ -534,7 +535,9 @@ class Bingo extends React.Component {
           </div>
           :
           <React.Fragment>
+           
             <body class="homepage">
+            <div className="font-container" >
               <div id="page-wrapper">
 
                 <div id="header">
@@ -596,6 +599,7 @@ class Bingo extends React.Component {
                   </div>
                 </div>
               </div>
+              </div>
             </body>
           
           
@@ -627,8 +631,10 @@ class Bingo extends React.Component {
               </Button>
             </Modal.Footer>
           </Modal>
+          
        </React.Fragment>
       }
+
       </React.Fragment>
 
       )

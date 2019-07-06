@@ -1572,6 +1572,11 @@
 
   font-family: 'HopOnz';
 }
+	.font-excluder {
+
+		 font-family: 'Source Sans Pro', sans-serif;
+
+	}
 	
 		body.is-loading *, body.is-loading *:after, body.is-loading *:before {
 			-moz-transition: none !important;
@@ -2220,7 +2225,7 @@
 
 	#nav {
 		position: absolute;
-		color: #EE376A;
+		color: #006838;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -2229,7 +2234,7 @@
 		padding: 1.5em 0 1.5em 0;
 		z-index: 1;
 		overflow: hidden;
-		background-color: rgba(0,0,0,.40);
+		background-color: rgba(52,58,64,1);
 	}
 
 		#nav > ul {

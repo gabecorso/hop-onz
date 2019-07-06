@@ -13,7 +13,9 @@ class Nav extends React.Component {
               <ul >
                 <li><a href="/#header">Home</a></li>
               
-                <li><a href="/#about">About</a></li>
+                <li><a href="/about">About</a></li>
+
+                <li><a href="/starters">Starters</a></li>
 
                 <li><a href="/bingo">Bingo</a></li>
 

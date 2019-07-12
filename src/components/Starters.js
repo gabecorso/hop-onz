@@ -39,11 +39,13 @@ render () {
             <Nav />
             <NavMobile />
           </section>
-          <hr/>    
+          <section>
 
-         
-
-            <p className={'container special'} style={{textAlign: 'center'}}>6 new Hop-Onz categories of 12 will be available at a retailer near you soon!</p>
+          <Card style={{marginTop: '150px'}}>
+            <Image thumbnail fluid width="200px" height="200px" style={{margin: 'auto', padding: '10px'}} src="https://hoponz.s3-us-west-2.amazonaws.com/logoTestTIny.png"></Image>
+            <p className={'container special'} style={{textAlign: 'center', padding: '10px'}}>6 new Hop-Onz categories of 12 will be available at a retailer near you soon!</p>
+            </Card>
+            </section>
             <ControlledCarouselStarters />
         
 

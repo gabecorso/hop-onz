@@ -39,12 +39,17 @@ render () {
             <Nav />
             <NavMobile />
           </section>
-          <hr/>    
+           
 
          
 
+<section>
 
-            <h2 style={{textAlign: 'center'}}>About Us</h2>
+          <Card style={{marginTop: '150px'}}>
+            <Image thumbnail fluid width="200px" height="200px" style={{margin: 'auto', padding: '10px'}} src="https://hoponz.s3-us-west-2.amazonaws.com/logoTestTIny.png"></Image>
+            <h2 className={'container special'} style={{textAlign: 'center', padding: '10px'}}>About Us</h2>
+            </Card>
+            </section>
             <ControlledCarousel />
     
             <section id="banner" >
